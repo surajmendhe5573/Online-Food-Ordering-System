@@ -3,7 +3,6 @@
 
 Online Food Ordering System enables users to register and login, browse and search restaurants by name or cuisine, view restaurant menus, add items to their cart, view and manage cart contents, proceed to checkout for order placement, view order history, and allows admins to manage restaurant listings efficiently by adding, editing, or deleting restaurants.
 
-# Online Food Ordering System
 
 ## Functionality
 
@@ -42,7 +41,7 @@ Online Food Ordering System enables users to register and login, browse and sear
 
 - **Manage Restaurants:**
   Allow admins to add, edit, or delete restaurants.
-# Online Food Ordering System API Endpoints
+# API Endpoints
 
 ## Authentication
 
