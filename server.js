@@ -31,5 +31,4 @@ app.use('/api/restaurants',router);
 app.use('/api/menus', menuRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/api/orders', orderRoutes);
-// app.use('/api/admin', adminRoutes);
 
