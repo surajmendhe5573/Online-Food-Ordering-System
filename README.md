@@ -42,44 +42,42 @@ Online Food Ordering System enables users to register and login, browse and sear
 
 - **Manage Restaurants:**
   Allow admins to add, edit, or delete restaurants.
-## API Endpoints
+# Online Food Ordering System API Endpoints
 
-### User Routes
+## Authentication
 
-#### Registration
-- `POST /api/users/register`
+### Register User
+- Endpoint: `POST /api/users/register`
   - Description: Register a new user.
   - Body Parameters:
     - `name` (String, required): Name of the user.
     - `email` (String, required): Email address of the user.
     - `password` (String, required): Password for the user account.
 
-#### Login
-- `POST /api/users/login`
+### Login User
+- Endpoint: `POST /api/users/login`
   - Description: User login to the system.
   - Body Parameters:
     - `email` (String, required): Email address of the user.
     - `password` (String, required): Password for the user account.
 
-#### Get User Profile
-- `GET /api/users/profile`
+### Get User Profile
+- Endpoint: `GET /api/users/profile`
   - Description: Get logged-in user's profile information.
   - Authentication: Bearer Token in Authorization header.
 
-### Restaurant Routes
+## Restaurant Management
 
-#### List Restaurants
-- `GET /api/restaurants`
+### List Restaurants
+- Endpoint: `GET /api/restaurants`
   - Description: Get a list of all restaurants.
-  
-#### Search Restaurants
-- `GET /api/restaurants/search`
-  - Description: Search restaurants by name or cuisine.
-  - Query Parameters:
-    - `keyword` (String, optional): Keyword to search by restaurant name or cuisine.
 
-#### Add Restaurant
-- `POST /api/restaurants`
+### Search Restaurants
+- Endpoint: `GET /api/restaurants/search?keyword={keyword}`
+  - Description: Search restaurants by name or cuisine.
+
+### Add Restaurant
+- Endpoint: `POST /api/restaurants`
   - Description: Add a new restaurant (Admin only).
   - Authentication: Bearer Token in Authorization header with Admin role.
   - Body Parameters:
@@ -87,8 +85,8 @@ Online Food Ordering System enables users to register and login, browse and sear
     - `description` (String, optional): Description of the restaurant.
     - `cuisine` (String, optional): Cuisine type of the restaurant.
 
-#### Update Restaurant
-- `PUT /api/restaurants/:id`
+### Update Restaurant
+- Endpoint: `PUT /api/restaurants/:id`
   - Description: Update an existing restaurant (Admin only).
   - Authentication: Bearer Token in Authorization header with Admin role.
   - Path Parameters:
@@ -98,23 +96,23 @@ Online Food Ordering System enables users to register and login, browse and sear
     - `description` (String, optional): Updated description of the restaurant.
     - `cuisine` (String, optional): Updated cuisine type of the restaurant.
 
-#### Delete Restaurant
-- `DELETE /api/restaurants/:id`
+### Delete Restaurant
+- Endpoint: `DELETE /api/restaurants/:id`
   - Description: Delete an existing restaurant (Admin only).
   - Authentication: Bearer Token in Authorization header with Admin role.
   - Path Parameters:
     - `id` (String, required): ID of the restaurant to delete.
 
-### Menu Routes
+## Menu Management
 
-#### View Menu
-- `GET /api/restaurants/:restaurantId/menu`
+### View Menu
+- Endpoint: `GET /api/restaurants/:restaurantId/menu`
   - Description: Get the menu of a specific restaurant.
   - Path Parameters:
     - `restaurantId` (String, required): ID of the restaurant.
 
-#### Add Item to Menu
-- `POST /api/restaurants/:restaurantId/menu`
+### Add Item to Menu
+- Endpoint: `POST /api/restaurants/:restaurantId/menu`
   - Description: Add an item to the menu of a restaurant (Admin only).
   - Authentication: Bearer Token in Authorization header with Admin role.
   - Path Parameters:
@@ -124,37 +122,37 @@ Online Food Ordering System enables users to register and login, browse and sear
     - `description` (String, optional): Description of the menu item.
     - `price` (Number, required): Price of the menu item.
 
-### Cart Routes
+## Cart Management
 
-#### Add to Cart
-- `POST /api/cart/add`
+### Add to Cart
+- Endpoint: `POST /api/cart/add`
   - Description: Add an item to the shopping cart.
   - Authentication: Bearer Token in Authorization header.
   - Body Parameters:
     - `menuItemId` (String, required): ID of the menu item to add to cart.
     - `quantity` (Number, optional): Quantity of the menu item to add (default is 1).
 
-#### View Cart
-- `GET /api/cart`
+### View Cart
+- Endpoint: `GET /api/cart`
   - Description: Get the items in the shopping cart.
   - Authentication: Bearer Token in Authorization header.
 
-#### Remove from Cart
-- `DELETE /api/cart/:id`
+### Remove from Cart
+- Endpoint: `DELETE /api/cart/:id`
   - Description: Remove an item from the shopping cart.
   - Authentication: Bearer Token in Authorization header.
   - Path Parameters:
     - `id` (String, required): ID of the cart item to remove.
 
-### Order Routes
+## Order Management
 
-#### Checkout
-- `POST /api/orders`
+### Checkout
+- Endpoint: `POST /api/orders`
   - Description: Place an order for the items in the shopping cart.
   - Authentication: Bearer Token in Authorization header.
   
-#### View Order History
-- `GET /api/orders`
+### View Order History
+- Endpoint: `GET /api/orders`
   - Description: Get the order history of the logged-in user.
   - Authentication: Bearer Token in Authorization header.
 
