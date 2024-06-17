@@ -177,6 +177,7 @@ JWT_SECRET=your_secret_key
 - **Express.js**: Web application framework for Node.js.
 - **MongoDB**: NoSQL database for data storage.
 - **JSON Web Tokens (JWT)**: Secure authentication mechanism.
+- **Postman**: API Development, Testing.
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
